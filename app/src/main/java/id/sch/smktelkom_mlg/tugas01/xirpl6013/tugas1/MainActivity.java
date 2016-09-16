@@ -53,7 +53,44 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean isValid() {
         boolean valid = true;
+        String na = nama.getText().toString();
+        String al = alamat.getText().toString();
 
+        if (na.isEmpty()) {
+            nama.setError("Please enter your name");
+            valid = false;
+        } else {
+            nama.setError(null);
+        }
+
+        if (al.isEmpty()) {
+            alamat.setError("Please enter your address");
+            valid = false;
+        }
+
+        String jurusan = "Jurusan yang Anda Pilih : \n ";
+        int startlen = jurusan.length();
+        if (rpl.isChecked()) jurusan += rpl.getText() + "\n";
+        if (tkj.isChecked()) jurusan += tkj.getText() + "\n";
+        if (mm.isChecked()) jurusan += mm.getText() + "\n";
+
+        if (jurusan.length() == startlen)
+            jurusan = "Please choose your school majors";
+        String jenis = null;
+
+        if (jk.getCheckedRadioButtonId() != -1) {
+            RadioButton rb = (RadioButton)
+                    findViewById(jk.getCheckedRadioButtonId());
+            jenis = rb.getText().toString();
+        }
+
+        if (jenis == null) {
+            hasil.setText("Please choose your gender");
+            valid = false;
+        } else {
+            hasil.setText("Congratulation" + nama + "From" + alamat + "is Already Registed.\n" +
+                    jurusan);
+        }
         return valid;
     }
 }
