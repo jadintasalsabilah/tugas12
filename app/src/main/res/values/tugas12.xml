@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Asal">
+        <item> Malang </item>
+        <item> Bandung </item>
+        <item> Jakarta </item>
+        <item> Bali </item>
+        <item> Jogja </item>
+        <item> Lain-Lain </item>
+    </string-array>
+
+
+</resources>
